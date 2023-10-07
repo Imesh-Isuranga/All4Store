@@ -11,6 +11,12 @@
                         <a href="#" class="primary-btn">Add to card</a>
                     </div>
                 </div>
+
+                <!--if products empty then display a message-->
+
+                <div *ngIf="products?.length==0" class="alert alert-warning col-mb-12" role="alert">
+                    No Products found...
+                </div>
             </div>
         </div>
     </div> 
