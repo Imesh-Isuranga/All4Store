@@ -65,7 +65,7 @@ export class ProductService {
     );
   }
 }
-
+//Unwraps the JSON from SPRING DATA REST _embedded entry
 interface getResponseProduct {
   _embedded: {
     products: Product[];
@@ -78,7 +78,7 @@ interface getResponseProduct {
   }
 }
 
-
+//Unwraps the JSON from SPRING DATA REST _embedded entry
 interface getResponseProductCategory {
   _embedded: {
     productCategory: ProductCategory[];
