@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Country } from 'src/app/common/country';
 import { State } from 'src/app/common/state';
 import { All4StoreService } from 'src/app/services/all4-store.service';
+import { CartService } from 'src/app/services/cart.service';
 import { All4StoreValidators } from 'src/app/validators/all4-store-validators';
 
 @Component({
@@ -25,11 +26,15 @@ export class CheckoutComponent implements OnInit{
   billingAddressState:State[]=[];
 
   constructor(private formBuilder:FormBuilder,
-    private all4Service:All4StoreService){
+    private all4Service:All4StoreService,
+    private cartService:CartService){
     
   }
 
   ngOnInit(): void {
+
+    this.reviewCartDetails();
+
     this.checkoutFormGroup = this.formBuilder.group({
       customer : this.formBuilder.group({
         firstName : new FormControl('',[Validators.required,Validators.minLength(2),All4StoreValidators.notOnlyWhitespace]),
@@ -91,6 +96,18 @@ export class CheckoutComponent implements OnInit{
         console.log("Retrieve countries: " + JSON.stringify(data));
         this.countries = data;
       }
+    );
+  }
+
+  reviewCartDetails() {
+    //subscribe to cartService.totalQuantity
+    this.cartService.totalQuantity.subscribe(
+      totalQuantity => this.totalQuantity=totalQuantity
+    );
+
+    //subscribe to cartService.totalPrice
+    this.cartService.totalPrice.subscribe(
+      totalPrice => this.totalPrice=totalPrice
     );
   }
 
