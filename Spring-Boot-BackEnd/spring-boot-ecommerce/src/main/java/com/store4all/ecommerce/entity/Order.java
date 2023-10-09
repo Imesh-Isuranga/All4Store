@@ -30,7 +30,7 @@ public class Order {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @Column(name = "product_id")
+    @Column(name = "status")
     private String status;
 
     @Column(name = "date_created")
@@ -58,7 +58,9 @@ public class Order {
 
     public void add(OrderItem item){
         if(item != null){
-            orderItem = new HashSet<>();
+            if(orderItem == null){
+                orderItem = new HashSet<>();
+            }
         }
 
         orderItem.add(item);
