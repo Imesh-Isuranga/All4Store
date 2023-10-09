@@ -1,6 +1,6 @@
 export class State {
     constructor(
-        publicid: number,
+        public id: number,
         public name: string,
     ) { }
 }
