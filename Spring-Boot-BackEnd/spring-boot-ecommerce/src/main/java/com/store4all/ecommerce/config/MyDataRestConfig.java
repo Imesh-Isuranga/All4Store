@@ -1,9 +1,6 @@
 package com.store4all.ecommerce.config;
 
-import com.store4all.ecommerce.entity.Country;
-import com.store4all.ecommerce.entity.Product;
-import com.store4all.ecommerce.entity.ProductCategory;
-import com.store4all.ecommerce.entity.State;
+import com.store4all.ecommerce.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +51,10 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         //diable HTTP methods for State:PUT,POST,DELETE
 
         disableHttpMethods(State.class,config, theUnsupportedActions);
+
+        //diable HTTP methods for Order:PUT,POST,DELETE
+
+        disableHttpMethods(Order.class,config, theUnsupportedActions);
 
         //call an internal helper method
         exposeIds(config);
