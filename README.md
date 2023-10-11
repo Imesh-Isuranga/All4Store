@@ -75,8 +75,14 @@ tsc --version
 ```
 If everything went well, you'll see the version number, which confirms that TypeScript is now on your computer.
 
+#### 5. Install the Angular CLI
 
-#### 5. Okta credentials
+```
+`npm install -g @angular/cli`
+```
+
+
+#### 6. Okta credentials
 Navigate to 
 ```
 cd Angular-FrontEnd\All4Store\src\app\config
@@ -101,7 +107,7 @@ If you don't have Okta account please follow below link.
 [Set up your app using Okta Integration](https://developer.okta.com/docs/guides/implement-grant-type/-/main/)
 
 
-#### 6. Start the Development Server:
+#### 7. Start the Development Server:
 
 ```
 ng serve
