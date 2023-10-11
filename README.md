@@ -7,7 +7,7 @@ Before you begin, ensure you have the following prerequisites installed:
 
 - Node.js and npm: Required for the Angular front-end.
 - TypeScript (tsc): Required for compiling Angular code.
-- Java Development Kit (JDK): Required for the Spring Boot back-end.
+- Java Development Kit (JDK): Required for the Spring Boot back-end.[ Java Installation Guild](https://phoenixnap.com/kb/install-java-windows)
 - MySQL: Required for the database.
 - Stripe API credentials.
 - Okta developer account for authorization.
@@ -94,12 +94,24 @@ Change below your for your credentials.
 ```
 export default {
     oidc:{
-        clientId:'your clientID',
-        issuer:'https://your issuedID/oauth2/default',
+        clientId:'{YourClientId}',
+        issuer:'https://{YourOktaDomain}/oauth2/default',
         redirectUri:'http://localhost:4200/login/callback',
         scopes:['openid','profile','email']
     }
 }
+```
+
+Navigate to 
+```
+cd Spring-Boot-BackEnd\spring-boot-ecommerce\src\main\resources
+```
+open application.properties file.
+
+Change below your for your credentials.
+```
+okta.oauth2.client-id={YourClientId}
+okta.oauth2.issuer=https://{YourOktaDomain}/oauth2/default
 ```
 
 If you don't have Okta account please follow below link.
@@ -122,6 +134,8 @@ ng serve
 ```
 cd Spring-Boot-BackEnd\spring-boot-ecommerce
 ```
+- MVN Installtion
+[MVN Install](https://phoenixnap.com/kb/install-maven-windows)
 
 - Build the Spring Boot Application:
 ```
