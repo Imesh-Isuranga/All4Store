@@ -94,12 +94,24 @@ Change below your for your credentials.
 ```
 export default {
     oidc:{
-        clientId:'your clientID',
-        issuer:'https://your issuedID/oauth2/default',
+        clientId:'{YourClientId}',
+        issuer:'https://{YourOktaDomain}/oauth2/default',
         redirectUri:'http://localhost:4200/login/callback',
         scopes:['openid','profile','email']
     }
 }
+```
+
+Navigate to 
+```
+cd Spring-Boot-BackEnd\spring-boot-ecommerce\src\main\resources
+```
+open application.properties file.
+
+Change below your for your credentials.
+```
+okta.oauth2.client-id={YourClientId}
+okta.oauth2.issuer=https://{YourOktaDomain}/oauth2/default
 ```
 
 If you don't have Okta account please follow below link.
