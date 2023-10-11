@@ -7,7 +7,7 @@ Before you begin, ensure you have the following prerequisites installed:
 
 - Node.js and npm: Required for the Angular front-end.
 - TypeScript (tsc): Required for compiling Angular code.
-- Java Development Kit (JDK): Required for the Spring Boot back-end.
+- Java Development Kit (JDK): Required for the Spring Boot back-end.[ Java Installation Guild](https://phoenixnap.com/kb/install-java-windows)
 - MySQL: Required for the database.
 - Stripe API credentials.
 - Okta developer account for authorization.
@@ -122,6 +122,8 @@ ng serve
 ```
 cd Spring-Boot-BackEnd\spring-boot-ecommerce
 ```
+- MVN Installtion
+[MVN Install](https://phoenixnap.com/kb/install-maven-windows)
 
 - Build the Spring Boot Application:
 ```
