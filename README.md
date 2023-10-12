@@ -83,6 +83,10 @@ If everything went well, you'll see the version number, which confirms that Type
 
 
 #### 6. Okta credentials
+
+![Okta Credentials](https://raw.githubusercontent.com/Imesh-Isuranga/All4Store/main/1.jpg)
+
+
 Navigate to 
 ```
 cd Angular-FrontEnd\All4Store\src\app\config
@@ -102,27 +106,42 @@ export default {
 }
 ```
 
-Navigate to 
-```
-cd Spring-Boot-BackEnd\spring-boot-ecommerce\src\main\resources
-```
-open application.properties file.
-
-Change below your for your credentials.
-```
-okta.oauth2.client-id={YourClientId}
-okta.oauth2.issuer=https://{YourOktaDomain}/oauth2/default
-```
 
 If you don't have Okta account please follow below link.
 
 [Set up your app using Okta Integration](https://developer.okta.com/docs/guides/implement-grant-type/-/main/)
 
 
-#### 7. Start the Development Server:
+#### 9. Stripe credentials
+
+![Stripe Credentials](https://raw.githubusercontent.com/Imesh-Isuranga/All4Store/main/2.jpg)
+
+Navigate to
+```
+cd Spring-Boot-BackEnd\spring-boot-ecommerce\src\main\resources
+```
+
+open application.properties file.
 
 ```
-ng serve
+stripe.key.secret = {Your_Strip_Client_Secret}
+```
+
+Navigate to
+```
+cd Angular-FrontEnd\All4Store\src\app\components\checkout
+```
+
+open checkout.component.spec.ts file.
+
+```
+stripe = Stripe({Your_Publishable_key});
+```
+
+#### 8. Start the Development Server:
+
+```
+npm start
 ```
 
 #### The Angular application will be accessible at http://localhost:4200.
@@ -156,6 +175,15 @@ The Spring Boot API will be accessible at http://localhost:8080.
 ```
 cd DataBase Scripts
 ```
+
+In this, I have used https instead of http because of more security.
+In this repository include my own generated Generate Key and Self-Signed Certificate. So if u have any issue with https when running the application please follow the below link and replace files frontend and backend as the below links say.
+
+[Generate Key and self-signed certificate ssl](https://github.com/darbyluv2code/fullstack-angular-and-springboot/blob/master/bonus-content/secure-https-communication/openssl-setup.md
+)
+
+[Keytool - Generate key and self-signed certificate](https://www.luv2code.com/keytool-steps)
+
 
 
 ## Acknowledgments
